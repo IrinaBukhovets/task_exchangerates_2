@@ -17,8 +17,8 @@ class ExReAPI(BaseAPI):
     def get_latest(self,parametr_get):
         self.parametr_get = parametr_get 
         parametr_get = {'access_key': API_KEY,'base':'EUR','symbols':'AED'}
-        #parametr_get['base'] = base_currency #где нужно определить эту переменную. Можно ли её наследовать из теста?
-        #parametr_get['symbols'] = exchang_currency #где нужно определить эту переменную
+        parametr_get['base'] = base_currency #где нужно определить эту переменную. Можно ли её наследовать из теста?
+        parametr_get['symbols'] = exchang_currency #где нужно определить эту переменную
 
         self.get_metod(self.parametr_get)
         return self.get_metod
