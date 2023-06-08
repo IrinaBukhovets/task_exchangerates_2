@@ -14,11 +14,16 @@ class ExReAPI(BaseAPI):
     def __init__(self):
         super().__init__(url=self.url_metod)
 
-    def get_latest(self):
-        self.get_metod({'access_key': API_KEY,'base':'EUR','symbols':'AED'})
+    def get_latest(self,parametr_get):
+        self.parametr_get = parametr_get 
+        parametr_get = {'access_key': API_KEY,'base':'EUR','symbols':'AED'}
+        parametr_get['base'] = base_currency #где нужно определить эту переменную. Можно ли её наследовать из теста?
+        parametr_get['symbols'] = exchang_currency #где нужно определить эту переменную
+
+        self.get_metod(self.parametr_get)
         return self.get_metod
 
 
 r = ExReAPI()
-response = r.get_latest()
+response = r.get_latest({'access_key': API_KEY,'base':'EUR','symbols':'AED'})
 print(response.status_code)
