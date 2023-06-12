@@ -16,3 +16,4 @@ class ExReCache(BaseCache):
         return [time_resp,base_currency,exchang_currency] 
 
         #self.save_cache() #не понимаю как применить пустую функцию save_cache
+
