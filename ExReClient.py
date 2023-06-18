@@ -4,6 +4,7 @@ from ExReAPI import ExReAPI
 from general_config import GeneralConfigsCurrensy
 from config import API_KEY
 
+
 class ExReClient():
     
     api_key = API_KEY
