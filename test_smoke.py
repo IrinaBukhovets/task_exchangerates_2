@@ -1,6 +1,7 @@
-from ExReAPI import ExReAPI
+from ExReClient import ExReClient
 
 def test_smoke():
-    client_exre = ExReAPI()
-    response = client_exre.get_latest('EUR','AED')
-    assert response['success'] == True
+    client_requests = ExReClient()
+    response = client_requests.requests_exre('BOB')
+    assert 'currency_value' in response.keys()
+    
